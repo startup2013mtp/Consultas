@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consultas", "Consultas\Consultas.csproj", "{5625086C-BDBF-43AC-A5EE-EDC78C5C5CE7}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://startup2013.visualstudio.com/DefaultCollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Consultas\\Consultas.csproj
+		SccProjectName1 = Consultas
+		SccLocalPath1 = Consultas
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5625086C-BDBF-43AC-A5EE-EDC78C5C5CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5625086C-BDBF-43AC-A5EE-EDC78C5C5CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5625086C-BDBF-43AC-A5EE-EDC78C5C5CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5625086C-BDBF-43AC-A5EE-EDC78C5C5CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
