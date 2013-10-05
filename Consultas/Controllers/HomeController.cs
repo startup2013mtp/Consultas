@@ -5,15 +5,25 @@ using System.Web;
 using System.Web.Mvc;
 using Models;
 using System.IO;
+using System.Net.Mail;
 
 namespace BootstrapMvcSample.Controllers
 {
     public class HomeController : Controller
     {
-        private const string TempPath = @"C:\Users\Thiago\Desktop\Teste";
        
         public ActionResult Index()
         {
+           /* MailMessage mail = new MailMessage();
+            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+            mail.From = new MailAddress("myemail@gmail.com");
+            mail.To.Add("recepient@gmail.com");
+            mail.Subject = "Password recovery";
+            mail.Body = "Recovering the password";
+
+            SmtpServer.Send(mail);
+            */
             return View();
         }
 
