@@ -3,15 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consultas", "Consultas\Consultas.csproj", "{5625086C-BDBF-43AC-A5EE-EDC78C5C5CE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "Framawork\Framework.csproj", "{8BF1FC08-C6B0-428B-AA35-8CD3D263B29C}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
+		SccNumberOfProjects = 1
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://startup2013.visualstudio.com/DefaultCollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Consultas\\Consultas.csproj
-		SccProjectName1 = Consultas
-		SccLocalPath1 = Consultas
+		SccTeamFoundationServer = https://startup2013.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = Consultas\\Consultas.csproj
+		SccProjectName0 = Consultas
+		SccAuxPath0 = https://startup2013.visualstudio.com/defaultcollection
+		SccLocalPath0 = Consultas
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +25,10 @@ Global
 		{5625086C-BDBF-43AC-A5EE-EDC78C5C5CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5625086C-BDBF-43AC-A5EE-EDC78C5C5CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5625086C-BDBF-43AC-A5EE-EDC78C5C5CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BF1FC08-C6B0-428B-AA35-8CD3D263B29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BF1FC08-C6B0-428B-AA35-8CD3D263B29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BF1FC08-C6B0-428B-AA35-8CD3D263B29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BF1FC08-C6B0-428B-AA35-8CD3D263B29C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Models;
 using System.IO;
-using System.Net.Mail;
+using Framawork;
 
 namespace BootstrapMvcSample.Controllers
 {
@@ -14,16 +14,6 @@ namespace BootstrapMvcSample.Controllers
        
         public ActionResult Index()
         {
-           /* MailMessage mail = new MailMessage();
-            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-
-            mail.From = new MailAddress("myemail@gmail.com");
-            mail.To.Add("recepient@gmail.com");
-            mail.Subject = "Password recovery";
-            mail.Body = "Recovering the password";
-
-            SmtpServer.Send(mail);
-            */
             return View();
         }
 
@@ -34,7 +24,10 @@ namespace BootstrapMvcSample.Controllers
             {
                 string filePath = Path.Combine(Server.MapPath("~/Content/temp/"), file.FileName);
                 System.IO.File.WriteAllBytes(filePath, ReadData(file.InputStream));
+                Mail.enviaEmail();
             }
+
+            
 
             return Json("All files have been successfully stored.");
         }
