@@ -1,0 +1,52 @@
+﻿<div class="page-header">Contactng us</div>
+<form class="form-horizontal" method="POST" action="@Url.Action("enviaDadosContato")" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Formulário de contato</legend>
+
+        <div class="form-group">
+            <label for="txtNome" class="col-lg-2 control-label">Digite seu nome:</label>
+            <div class="col-lg-6">
+                <input type="text" class="form-control" name="txtNome" id="txtNome" placeholder="Nome.." required=""/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="txtEmail" class="col-lg-2 control-label">Digite seu email:</label>
+            <div class="col-lg-6">
+                <input type="email" class="form-control" name="txtEmail" id="txtEmail" placeholder="Email.." required="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="selectEstado" class="col-lg-2 control-label">Estado:</label>
+            <div class="col-lg-10">
+                <select class="col-lg-4" id="slcEstado">
+                    <option>Minas Gerais</option>
+                    <option>São Paulo</option>
+                    <option>Rio de Janeiro</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="txtMensagem" class="col-lg-2 control-label">Mensagem:</label>
+            <div class="col-lg-10">
+                <textarea name="txtMsg" id="txtMensagem" placeholder="Mensagem..." required=""></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="txtArquivo" class="col-lg-2 control-label">Arquivo:</label>
+            <div class="col-lg-5">
+                <input type="file" />
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <input type="submit" value="Enviar" class="btn btn-success"/>
+            <div class="btn btn-danger">Cancelar</div>
+        </div>
+        
+
+    </fieldset>
+</form>
