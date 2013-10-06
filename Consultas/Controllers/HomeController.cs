@@ -26,10 +26,20 @@ namespace BootstrapMvcSample.Controllers
                 System.IO.File.WriteAllBytes(filePath, ReadData(file.InputStream));
                 Mail.enviaEmail();
             }
-
-            
-
             return Json("All files have been successfully stored.");
+        }
+
+        [HttpPost]
+        public ActionResult UploadFiles(HttpPostedFileBase file)
+        {
+
+            foreach (HttpPostedFileBase file in files)
+            {
+                string filePath = Path.Combine(Server.MapPath("~/Content/temp/"), file.FileName);
+                System.IO.File.WriteAllBytes(filePath, ReadData(file.InputStream));
+                Mail.enviaEmail();
+            }
+            return RedirectToAction("Index");
         }
 
         private byte[] ReadData(Stream stream)
