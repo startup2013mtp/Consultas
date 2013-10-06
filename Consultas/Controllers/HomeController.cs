@@ -14,12 +14,14 @@ namespace BootstrapMvcSample.Controllers
        
         public ActionResult Index()
         {
+            Session["email"] = "";
             return View();
         }
 
         [HttpPost]
         public ActionResult UploadFiles(IEnumerable<HttpPostedFileBase> files)
         {
+            string email = Session["email"].ToString();
             foreach (HttpPostedFileBase file in files)
             {
                 string filePath = Path.Combine(Server.MapPath("~/Content/temp/"), file.FileName);
@@ -30,16 +32,18 @@ namespace BootstrapMvcSample.Controllers
         }
 
         [HttpPost]
-        public ActionResult UploadFiles(HttpPostedFileBase file)
+        public ActionResult UploadFilesOld(HttpPostedFileBase file, FormCollection form)
         {
-
-            foreach (HttpPostedFileBase file in files)
-            {
-                string filePath = Path.Combine(Server.MapPath("~/Content/temp/"), file.FileName);
-                System.IO.File.WriteAllBytes(filePath, ReadData(file.InputStream));
-                Mail.enviaEmail();
-            }
+            string email = form["email"];
+            string filePath = Path.Combine(Server.MapPath("~/Content/temp/"), file.FileName);
+            System.IO.File.WriteAllBytes(filePath, ReadData(file.InputStream));
+            Mail.enviaEmail();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult emailToSession(string email) {
+            Session["email"] = email;
+            return Json("Ok");
         }
 
         private byte[] ReadData(Stream stream)

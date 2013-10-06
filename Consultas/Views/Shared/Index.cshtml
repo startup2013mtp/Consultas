@@ -7,18 +7,25 @@
 <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added within <code>#wrap</code> with <code>padding-top: 60px;</code> on the <code>.container</code>.</p>
 <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
 also check it client-side to prevent huge file uploads.
+<form action="@Url.Action("UploadFilesOld")" method="post" enctype="multipart/form-data">
+    <input class="input-xxlarge" name="email" id="email" type="text" placeholder="Digite o seu email">
+    <input type="file" id="arq" name="file" style='display:none;'/>
+    <input id="btn-upload" type="submit" style='display:none;'>
+</form>
 <div id="dropZone">Arraste a sua foto aqui<br />
     <span class="upload">ou clique <a href="#">aqui</a> para o envio simples</span>
 </div>
-<form action="@Url.Action("UploadFiles")" method="post" enctype="multipart/form-data">
-    <input type="file" id="arq" name="files" style='display:none;'/>
-    <input id="btn-upload" type="submit" style='display:none;'>
-</form>
 @section Scripts{
 <script type="text/javascript">
     $(function () {
         $('.upload a').click(function () {
-            $('#arq').click();
+            if ($('#email').val().length > 0) {
+                $('#arq').click();
+            }
+            else {
+                alert("Você deve inserir o email primeiro!");
+                return false;
+            }
         });
         $('#arq').on('change', function () {
             $("#btn-upload").click();
@@ -34,9 +41,18 @@ also check it client-side to prevent huge file uploads.
             //dragLeave: function () {
             //    $('#dropZone').css('background', 'gray');
             //},
-            //drop: function () {
-            //    $('#dropZone').css('background', 'gray');
-            //},
+            drop: function () {
+                if ($('#email').val().length > 0) {
+                    var data = {
+                        email: $('#email').val()
+                    };
+                    $.post('@Url.Action("emailToSession")', data);
+                }
+                else {
+                    alert("Você deve inserir o email primeiro!");
+                    return false;
+                }
+            },
             afterAll: function () {
                 $('#dropZone').html('Foto enviada com sussesso');
             },
